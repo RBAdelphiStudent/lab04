@@ -66,11 +66,13 @@ System.out.println("# price cents.");
 The price of a ticket is xyz cents.
 ```
 
-
 ## Create two ticket machines with differently priced tickets. Do calls to their showPrice methods show the same output, or different? How do you explain this effect?
+* Two ticket machines with two different prices produce different outputs when the showPrice method is called. This behavior is due to the fact that the two machines are different instances of a class, and have different parameters for the int `price`, which determines the price displayed in the output of showPrice.
 
 ## Modify the constructor of `TicketMachine` in the `lab04-ticket-machine` so that it no longer has a parameter. Instead, the price of tickets should be fixed at 1,000 cents. What effect does this have when you construct ticket-machine objects within BlueJ?
+* Modifying the constructor `TicketMachine` so it no longer has a parameter makes it so that all objects of the class `TicketMachine` produced by this code have the field `int price` fixed at 1000 cents.
 
 ## Give the class two constructors. One should take a single parameter that specifies the price, and the other should take no parameter and set the price to be a default value of your choosing. Test your implementation by creating machines via the two different constructors.
 
 ## Implement a method, `empty`, that simulates the effect of removing all money from the machine. This method should have a `void` return type, and its body should simply set the `total` field to zero. Does this method need to take any parameters? Test your method by creating a machine, inserting some money, printing some tickets, checking the total, and then emptying the machine. Is the `empty` method a mutator or an accessor?
+* The method `empty` does not need to take any parameters, as it functions to always set total to the same amount (0). The `empty` method is a mutator, as it changes a field value (`total`) of an object.
