@@ -29,7 +29,39 @@ public class TicketMachine
         balance = 0;
         total = 0;
     }
-
+    /**
+     * Creates a machine that issues tickets of the default price (500 cents).
+     */
+    public TicketMachine()
+    {
+        price = 500;
+        balance = 0;
+        total = 0;
+    }
+    /**
+     * Sets the price of a ticket.
+     */
+    public void setPrice(int cost){
+        price=cost;
+    }
+    /**
+    * Reduce price by given amount.
+    */
+    public void discount(int amount){
+        price=price-amount;
+    }
+    /**
+     * Prompts the user to inser the correct amount of money into the machine.
+     */
+    public void prompt(){
+        System.out.println("Please insert the correct amount of money.");
+    }
+    /**
+     * Emptys money from the ticket machine, setting the total to 0.
+     */
+    public void empty(){
+        total=0;
+    }
     /**
      * Return the price of a ticket.
      */
@@ -37,7 +69,10 @@ public class TicketMachine
     {
         return price;
     }
-
+    public void showPrice(){
+        System.out.println("The price of a ticket is "
+        +price+" cents.");
+    }
     /**
      * Return the amount of money already inserted for the
      * next ticket.

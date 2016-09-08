@@ -1,11 +1,12 @@
 # lab04
 
-All of these questions deal with the ticket machine example bundled in this repo. You should fork this repo and clone the fork to work on the code locally. 
+All of these questions deal with the ticket machine example bundled in this repo. You should fork this repo and clone the fork to work on the code locally.
 
 ## How can we tell from just its header that `setPrice` is a method and not a constructor?
 ```
 public void setPrice(int cost)
 ```
+* One can tell from the header that `setPrice` is a method and not a constructor because the header because it has no output and its name does not match that of the class.
 
 ## Complete the body of the setPrice method so that it assigns the value of its parameter to the price field. Write your new method in the `lab04-ticket-machine`.
 
@@ -16,10 +17,11 @@ public void setPrice(int cost)
  */
 public void increase(int points)
 {
-  ...
+  score=score+points;
 }
 ```
 ## Is the `increase` method in the previous question a mutator? If so, how could you demonstrate this?
+* The `increase` method in the previous question is a mutator because it changes a parameter to the field `score`.
 
 ## Complete the following method, whose purpose is to subtract the value of its parameter from a field named `price`. Add your new method to the `lab04-ticket-machine`.
 ```
@@ -28,7 +30,7 @@ public void increase(int points)
  */
 public void discount(int amount)
 {
-  ...
+  price=price-amount;
 }
 ```
 
@@ -36,8 +38,9 @@ public void discount(int amount)
 ```
 System.out.println("My cat has green eyes.");
 ```
+* My cat has green eyes.
 
-## Add a method called `prompt` to the `TicketMachine` class in the `lab04-ticket-machine`. This should have a `void` return type and take no parameters. The body of the method should print the following single line of output: 
+## Add a method called `prompt` to the `TicketMachine` class in the `lab04-ticket-machine`. This should have a `void` return type and take no parameters. The body of the method should print the following single line of output:
 ```
 Please insert the correct amount of money.
 ```
@@ -46,13 +49,17 @@ Please insert the correct amount of money.
 ```
 System.out.println("# " + "price" + " cents.");
 ```
+The system would print `# price cents.`
 
 ## What would be printed here?
 ```
 System.out.println("# price cents.");
 ```
+* The system would print `# price cents.`
 
 ## Could either of the previous two versions be used to show the price of tickets in different ticket machines? Explain your answer.
+
+* Neither of the previous two versions could be used to show the price of tickets in different machines, as they print a String, "price", rather than the int `price`. Only the latter will show the actual price of the tickets when prompted.
 
 ## Add a `showPrice` method to the `TicketMachine` class in the `lab04-ticket-machine`. This should have a void return type and take no parameters. The body of the method should print (here `xyz` should be replaced by the value held in the `price` field when the method is called):
 ```
